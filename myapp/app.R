@@ -3,6 +3,7 @@
 # Load packages
 library(shiny)
 library(DT)
+library(tidyverse)
 library(dplyr)
 library(stringr)
 library(ggplot2)
@@ -257,7 +258,9 @@ server <- function(input, output) {
         # If a given party is chosen with a given year and category is "Tous", plot party year topic shares
         
         else if (input$vis_category == "Tous" & !input$vis_party %in% c("Tous") & !input$vis_year %in% c("Tous", "Comparaison")) {
-            ggplot(party_year_topic_shares, aes(fct_reorder(predicted, share), share)) +
+            party_year_topic_shares |> 
+                filter(party == input$vis_party & year == input$vis_year) |>
+            ggplot(aes(fct_reorder(predicted, share), share)) +
                 geom_col(position = "dodge2") +
                 labs(title = paste("Distribution des enjeux dans les programmes par parti et année", input$vis_year),
                      x = "Enjeu",
