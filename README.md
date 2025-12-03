@@ -1,3 +1,3 @@
-# Programmes électoraux français
+# French Manifesto Corpus
 
-Ce repo compile les programmes électoraux des partis politiques français pour les élections présidentielles, législatives et européennes, à la fois en pdf, en version txt. Les programmes sont ensuite tokenisés au niveau de la phrase pour faciliter des analyses textuelles. 
+This repository compiles the electoral programs of French political parties for the presidential, legislative, and European elections, both in PDF and TXT formats. The programs are then tokenized at the sentence level to facilitate textual analysis.
